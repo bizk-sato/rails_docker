@@ -4,6 +4,9 @@
 ```
 docker-compose build
 ```
+```
+docker-compose stop
+```
 
 db作成
 
