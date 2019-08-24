@@ -1,0 +1,35 @@
+# バージョン管理
+tax-cal.xl
+tax-cal-ver1.xl
+tax-cal-ver2.xl
+tax-cal-ver3.xl
+=> 別ファイルに切り出す。
+
+tax-cal.xl
+version: 1
+version: 2 MAX
+version: 3 AVG
+
+          add_tax_cal --------------------------↓
+master ->-----------------------------------------------------------------|------|-------|--------|----------|-------|
+          fix_bug -----|-------|------|------|----|----|-----|---|-----↑
+
+# branch名一覧
+git branch
+# branchを切る
+git checkout -b branch名
+# 既存のbranchに移動する
+git checkout branch名
+# ファイルの状態を見る
+git status
+# 変更内容
+git diff
+# add
+git add
+# commit
+git commit -m  "メッセージ"
+# コミット
+git log
+
+git config --global user.name "【ユーザー名】"
+git config --global user.email "【メールアドレス】"
