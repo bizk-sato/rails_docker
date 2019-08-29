@@ -1,0 +1,8 @@
+<ul>
+  <% @users.each do |user| %>
+    <li><%= link_to(user.name,"/users/#{user.id}") %></li>
+    <li><%= user.age %></li>
+    <li><%= user.gender %></li>
+    <li><%= user.description %></li>
+  <% end %>
+</ul>

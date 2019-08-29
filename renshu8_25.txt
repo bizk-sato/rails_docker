@@ -1,0 +1,33 @@
+# CRUD機能
+Create => 作成
+Read => 取得
+Update => 更新
+Delete => 削除
+
+# HTTPメソッド
+POST => 作成
+GET => 取得
+PATCH => 更新
+DELETE => 削除
+
+# MVC
+Model
+View
+Controller
+
+# Userモデルを作成
+name
+age
+gender
+description
+
+
+# 宿題: show, new, create, edit, update, destroy
+=> new, edit(formタグを使う)
+=> form_forメソッド
+名前、年、性別、説明を入力できる画面
+# bootstrap公式サイト(document)を呼んでおく。
+# gitで新しいブランチを作成してそこで作業(add_users)
+git add
+git commit
+# progateのRailsコースを終わらせる

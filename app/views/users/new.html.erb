@@ -1,0 +1,12 @@
+新規登録
+<%=form_for("/users/create") do%>
+名前
+<input name="name" type="text">
+年齢
+<input name="age" type="text">
+性別
+<input name="gender" type="text">
+説明
+<textarea name="description"></textarea>
+<input type="submit" value="新規登録">
+<%end%>

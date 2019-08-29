@@ -1,0 +1,12 @@
+個人データ編集
+<%= form_for("/users/#{@user.id}/update") do %>
+名前
+<input type="text" name="name" value="<%= @user.name %>">
+年齢
+<input type="text" name="age" value="<%= @user.age %>">
+性別
+<input type="text" name="gender" value="<%= @user.gender %>">
+説明
+<textarea name="description" value="<% @user.description %>"></textarea>
+<input type="submit" value="プロフィール修正完了！">
+<% end %>
