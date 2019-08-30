@@ -1,3 +1,3 @@
-<%=user.name%>
+<%=@user.name%>
 <%=link_to("編集","/users/#{@user.id}/edit")%>
-<%=link_to("削除", "/destroy", {method:"post"})%>
+<%=link_to("削除", @user, method: :delete)%>

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user=User.new
   end
 
   def create
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
       description:params[:description]
     )
     @user.save
-    redirect_to("/users/index")
+    redirect_to("/users")
   end
 
   def edit
@@ -32,12 +33,12 @@ class UsersController < ApplicationController
     @user.gender=params[:gender]
     @user.description=params[:description]
     @user.save
-    redirect_to("/users/index")
+    redirect_to("/users")
   end
 
   def destroy
-    @user=User.find-by(id:params[:id])
+    @user=User.find_by(id:params[:id])
     @user.destroy
-    redirect_to("users/index")
+    redirect_to("/users")
   end
 end
