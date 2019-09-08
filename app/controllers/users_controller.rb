@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user=User.find_by(id:params[:id])
+    @user = User.find_by(id:params[:id])
   end
 
   def new
@@ -12,14 +12,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user=User.new(
-      name:params[:name],
-      age:params[:age],
-      gender:params[:gender],
-      description:params[:description]
-    )
+    @user=User.new(controller_params)
     @user.save
-    redirect_to("/users")
+    #redirect_to(users_path)
+    redirect_to action: :index
   end
 
   def edit
@@ -28,17 +24,32 @@ class UsersController < ApplicationController
 
   def update
     @user=User.find_by(id:params[:id])
-    @user.name=params[:name]
-    @user.age=params[:age]
-    @user.gender=params[:gender]
-    @user.description=params[:description]
+    # @user.name=params[:name]
+    # @user.age=params[:age]
+    # @user.gender=params[:gender]
+    # @user.description=params[:description]
+    @user.attributes = controller_params
     @user.save
-    redirect_to("/users")
+    #redirect_to("/users")
+    redirect_to action: :index
   end
 
   def destroy
     @user=User.find_by(id:params[:id])
     @user.destroy
-    redirect_to("/users")
+    #redirect_to(users_path)
+    redirect_to action: :index
+  end
+
+  private
+
+  def controller_params
+    # キーワード: ストロングパラメーター
+    params.require(:user).permit(
+      :name,
+      :age,
+      :description,
+      :gender,
+    )
   end
 end

@@ -1,20 +1,22 @@
-<%=form_for(@user) do%>
+<%= form_for(@user) do |f| %>
+  名前
+  <%= f.text_field :name %>
+  <!-- <input name="name" type="text"> -->
 
-名前
-<input name="name" type="text">
+  年齢
+  <!-- <input name="age" type="text"> -->
+  <%= f.text_field :age %>
 
-年齢
-<input name="age" type="text">
+  性別
+  <!-- <select name="gender"> -->
+  <!-- <option>男</option> -->
+  <!-- <option>女</option> -->
+  <!-- </select> -->
+  <%= f.select :gender, ["男","女"] %>
 
-性別
-<select name="gender">
-<option>男</option>
-<option>女</option>
-</select>
-
-説明
-<textarea name="description"></textarea>
-
-<input type="submit" value="新規登録">
-
-<%end%>
+  説明
+  <!-- <textarea name="description"></textarea> -->
+  <%= f.text_area :description %>
+  <!-- <input type="submit" value="新規登録"> -->
+  <%= f.submit "新規登録" %>
+<% end %>

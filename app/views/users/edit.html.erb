@@ -1,15 +1,22 @@
 個人データ編集
-<%= form_for(@user) do %>
-名前
-<input type="text" name="name" value="<%= @user.name %>">
-年齢
-<input type="text" name="age" value="<%= @user.age %>">
-性別
-<select name="gender">
-<option>男</option>
-<option>女</option>
-</select>
-説明
-<textarea name="description"><%=@user.description%></textarea>
-<input type="submit" value="プロフィール修正完了！">
+<%= form_for(@user) do |f| %>
+  名前
+  <!-- <input type="text" name="name" value="<%= @user.name %>"> -->
+  <%= f.text_field :name %>
+  年齢
+  <!-- <input type="text" name="age" value="<%= @user.age %>"> -->
+  <%= f.text_field :age %>
+  性別
+  <!-- <select name="gender">
+  <option>男</option>
+  <option>女</option>
+  </select> -->
+  <%= f.select :gender, ["男", "女"] %>
+
+  説明
+  <!-- <textarea name="description"><%=@user.description%></textarea> -->
+  <%= f.text_area :description %>
+
+  <!-- <input type="submit" value="プロフィール修正完了！"> -->
+  <%= f.submit "修正完了" %>
 <% end %>
