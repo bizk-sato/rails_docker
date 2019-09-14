@@ -1,22 +1,33 @@
-<%= form_for(@user) do |f| %>
-  名前
-  <%= f.text_field :name %>
-  <!-- <input name="name" type="text"> -->
+<div class="container">
+  <%= form_for @user do |f| %>
+    <div class="form-group col-sm-3">
+      <%= f.label :name, "名前" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
 
-  年齢
-  <!-- <input name="age" type="text"> -->
-  <%= f.text_field :age %>
+    <div class="form-group col-sm-1">
+      <%= f.label :age, "年齢" %>
+      <%= f.text_field :age, class: "form-control" %>
+    </div>
 
-  性別
-  <!-- <select name="gender"> -->
-  <!-- <option>男</option> -->
-  <!-- <option>女</option> -->
-  <!-- </select> -->
-  <%= f.select :gender, ["男","女"] %>
+    <div col-sm-2">
+      性別
+      <%= f.radio_button :gender, 1 %>
+      <%= f.label :gender_1, "男" %>
+      <%= f.radio_button :gender, 2 %>
+      <%= f.label :gender_2, "女" %>
+    </div>
 
-  説明
-  <!-- <textarea name="description"></textarea> -->
-  <%= f.text_area :description %>
-  <!-- <input type="submit" value="新規登録"> -->
-  <%= f.submit "新規登録" %>
-<% end %>
+    <div class="form-group col-sm-3">
+      <%= f.label :password, "パスワード" %>
+      <%= f.text_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-sm-8">
+      <%= f.label :description, "説明" %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+      <%= f.submit "新規登録",class: "btn btn-success" %>
+  <% end %>
+</div>

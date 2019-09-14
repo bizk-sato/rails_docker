@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">支払日</th>
+      <th scope="col">精算者</th>
+      <th scope="col">内容</th>
+      <th scope="col">金額</th>
+    </tr>
+  </thead>
+  <% @costs.each do |cost| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= cost.day %></th>
+      <td><%= cost.user_name %></td>
+      <td><%= link_to cost.content, cost%></td>
+      <td><%= cost.price %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

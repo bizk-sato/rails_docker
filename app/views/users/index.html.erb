@@ -1,7 +1,29 @@
-<ul><% @users.each do |user| %>
-    <li><%= "IDナンバー#{user.id}"%>
-    <%= link_to(user.name,"/users/#{user.id}") %>
-    <%= "#{user.age}歳" %>
-    <%= user.gender %>
-    <%= "「#{user.description}」" %></li>
-<% end %></ul>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">IDナンバー</th>
+                <th scope="col">名前</th>
+                <th scope="col">年齢</th>
+                <th scope="col">性別</th>
+                <th scope="col">パスワード</th>
+                <th scope="col">説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <td><%= link_to user.id, user %></td>
+                    <td><%= link_to user.name, user %></td>
+                    <td><%= link_to user.age, user %></td>
+                    <td><%= link_to user.gender, user %></td>
+                    <td><%= link_to user.password, user %></td>
+                    <td><%= link_to user.description, user %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+
+

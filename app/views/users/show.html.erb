@@ -1,3 +1,8 @@
-<%=@user.name%>
-<%=link_to("編集","/users/#{@user.id}/edit")%>
-<%=link_to("削除", @user, method: :delete)%>
+<%= @user.name %>
+<%= @user.age %>
+<%= @user.gender %>
+<%= @user.password %>
+<%= @user.description %>
+<%=link_to "編集", [:edit, @user]%>
+<%=link_to "削除", @user, method: :delete,
+ deta: {confirm: "本当に削除していいですか？"} %>
