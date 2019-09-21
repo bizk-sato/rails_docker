@@ -3,7 +3,8 @@
     <tr>
       <th scope="col">支払日</th>
       <th scope="col">精算者</th>
-      <th scope="col">内容</th>
+      <th scope="col">種類</th>
+      <th scope="col">摘要</th>
       <th scope="col">金額</th>
     </tr>
   </thead>
@@ -11,9 +12,10 @@
   <tbody>
     <tr>
       <th scope="row"><%= cost.day %></th>
-      <td><%= cost.user_name %></td>
-      <td><%= link_to cost.content, cost%></td>
-      <td><%= cost.price %></td>
+      <td><%= cost.user.name %></td>
+      <td><%= cost.subject.name %></td>
+      <td><%= cost.detail.name %></td>
+      <td><%= link_to cost.price, cost %></td>
     </tr>
   </tbody>
   <% end %>

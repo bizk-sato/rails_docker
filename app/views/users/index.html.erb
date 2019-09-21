@@ -7,18 +7,16 @@
                 <th scope="col">年齢</th>
                 <th scope="col">性別</th>
                 <th scope="col">パスワード</th>
-                <th scope="col">説明</th>
             </tr>
         </thead>
         <tbody>
             <% @users.each do |user| %>
                 <tr>
-                    <td><%= link_to user.id, user %></td>
+                    <td><%= user.id %></td>
                     <td><%= link_to user.name, user %></td>
-                    <td><%= link_to user.age, user %></td>
-                    <td><%= link_to user.gender, user %></td>
-                    <td><%= link_to user.password, user %></td>
-                    <td><%= link_to user.description, user %></td>
+                    <td><%= user.age %></td>
+                    <td><%= user.gender %></td>
+                    <td><%= user.password %></td>
                 </tr>
             <% end %>
         </tbody>

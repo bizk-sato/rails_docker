@@ -1,47 +1,52 @@
+# frozen_string_literal: true
+
 class CostsController < ApplicationController
-   def index
+  def index
     @costs = Cost.all
-   end
-   def show
+  end
+
+  def show
     @cost = Cost.find(params[:id])
-   end
-   def new
+  end
+
+  def new
     @cost = Cost.new
-   end
-   def create
-    @cost = Cost.new(controller_params)
+  end
+
+  def create
+    @cost = Cost.new(controller_params_costs)
     if @cost.save
-        redirect_to :costs
+      redirect_to :costs
     else
-        render "new"
+      render 'new'
     end
-   end
-   def edit
+  end
+
+  def edit
     @cost = Cost.find(params[:id])
-   end
-   def update
+  end
+
+  def update
     @cost = Cost.find(params[:id])
-    @cost.attributes = controller_params
+    @cost.attributes = controller_params_costs
     if @cost.save
-    redirect_to :costs
+      redirect_to :costs
     else
-    render "edit"
+      render 'edit'
     end
-   end
-   def destroy
-    @cost=Cost.find(params[:id])
+  end
+
+  def destroy
+    @cost = Cost.find(params[:id])
     @cost.destroy
     redirect_to :costs
-   end
+  end
 end
 
 private
 
-def controller_params
-    params.require(:cost).permit(
-    :day,
-    :user_name,
-    :content,
-    :price
-    )
+def controller_params_costs
+  params.require(:cost).permit(
+    :day, :user_id, :subject_id, :detail_id, :price
+  )
 end

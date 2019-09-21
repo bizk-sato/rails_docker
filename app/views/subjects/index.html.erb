@@ -1,0 +1,5 @@
+経費科目一覧
+<% @subjects.each do |s|  %>
+<%= s.id %>
+<%= link_to s.name, s %>
+<% end %>

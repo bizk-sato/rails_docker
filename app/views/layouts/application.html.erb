@@ -10,21 +10,33 @@
   </head>
 
   <body>
+  <div>
+  ログインユーザー：
+  <% if @current_user %>
+  <%= @current_user.name %>
+  <% end %>
+  </div>
   <div class="countainer-fluid">
-  <div class="col-sm-3"><%= link_to "ユーザー一覧", :users %></div>
-  <div class="col-sm-3"><%= link_to "新規登録", :new_user %></div>
-  <div class="col-sm-3"><%= link_to "経費一覧", :costs %></div>
-  <div class="col-sm-3"><%= link_to "経費計上", :new_cost %></div>
+  <div class="col-sm-3"><%= link_to "ユーザー一覧", :users %>
+  <%= link_to "新規登録", :new_user %></div>
+  <div class="col-sm-3"><%= link_to "経費一覧", :costs %>
+  <%= link_to "経費計上", :new_cost %></div>
+  <div class="col-sm-3"><%= link_to "科目一覧", :subjects %>
+  <%= link_to "科目登録", :new_subject %></div>
+  <div class="col-sm-3"><%= link_to "摘要一覧", :details %>
+  <%= link_to "摘要登録", :new_detail %></div>
   </div>
 
+
   ログイン
-  <%= form_for :session do |f| %>
-    <%= f.label :name, "名前" %>
-    <%= f.text_field :name %>
-    <%= f.label :password, "パスワード" %>
-    <%= f.text_field :password %>
-    <%= f.submit "ログイン" %>
+  <%= form_tag :session do %>
+    <div><label>ユーザー名：</label>
+    <input type="text" name="name"></div>
+    <div><label>パスワード：</label>
+    <input type="password" name="password"></div>
+    <div><input type="submit" value="ログイン"></div>
   <% end %>
+  <%= link_to "ログアウト", :session, method: :delete %>
     <%= yield %>
   </body>
 </html>

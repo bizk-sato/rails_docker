@@ -1,0 +1,6 @@
+摘要
+<%= @detail.id %>
+<%= @detail.subject_id %>
+<%= @detail.subject.name %>
+<%= link_to "修正", [:edit, @detail] %>
+<%= link_to "削除", @detail, method: :delete %>

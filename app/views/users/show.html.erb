@@ -1,8 +1,17 @@
-<%= @user.name %>
+<div>ユーザー名</div>
+<div><%= @user.name %>
 <%= @user.age %>
 <%= @user.gender %>
 <%= @user.password %>
-<%= @user.description %>
 <%=link_to "編集", [:edit, @user]%>
-<%=link_to "削除", @user, method: :delete,
- deta: {confirm: "本当に削除していいですか？"} %>
+<%=link_to "削除", @user, method: :delete %></div>
+
+<div>経費一覧</div>
+ <% @costs.each do |cost| %>
+  <div>
+    <%= cost.day %>
+    <%= cost.subject.name %>
+    <%= cost.detail.name %>
+    <%= cost.price %>
+  </div>
+ <% end %>

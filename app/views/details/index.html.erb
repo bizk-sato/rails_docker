@@ -1,0 +1,12 @@
+摘要一覧
+<% @details.each do |d| %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
+      <%= d.id %>
+      <%= link_to d.subject.name, d %>
+      <%= d.name %>
+    </div>
+  </div>
+</div>
+<% end %>
