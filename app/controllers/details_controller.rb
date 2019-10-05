@@ -3,16 +3,9 @@
 class DetailsController < ApplicationController
   def index
     @details = Detail.all
-  end
-
-  def show
-    @detail = Detail.find(params[:id])
-  end
-
-  def new
     @detail = Detail.new
   end
-
+  
   def create
     @detail = Detail.new(controller_params_details)
     if @detail.save

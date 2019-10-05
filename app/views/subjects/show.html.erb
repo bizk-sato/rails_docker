@@ -1,9 +1,0 @@
-<div>経費科目</div>
-<div><%= @subject.name %>
-<%= link_to "修正", [:edit, @subject] %>
-<%= link_to "削除", @subject, method: :delete %></div>
-
-<div>摘要一覧</div>
-<% @details.each do |detail| %>
-  <div><%= detail.name %></div>
-<% end %>

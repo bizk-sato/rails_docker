@@ -2,5 +2,5 @@
 
 class Detail < ApplicationRecord
   belongs_to :subject
-  has_many :costs
+  has_many :costs, dependent: :nullify
 end

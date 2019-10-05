@@ -4,11 +4,7 @@ class CostsController < ApplicationController
   def index
     @costs = Cost.all
   end
-
-  def show
-    @cost = Cost.find(params[:id])
-  end
-
+  
   def new
     @cost = Cost.new
   end

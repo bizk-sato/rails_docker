@@ -6,6 +6,7 @@
       <th scope="col">種類</th>
       <th scope="col">摘要</th>
       <th scope="col">金額</th>
+      <th scope="col">修正・削除</th>
     </tr>
   </thead>
   <% @costs.each do |cost| %>
@@ -15,7 +16,9 @@
       <td><%= cost.user.name %></td>
       <td><%= cost.subject.name %></td>
       <td><%= cost.detail.name %></td>
-      <td><%= link_to cost.price, cost %></td>
+      <td><%= "#{cost.price.to_s(:delimited)}円" %></td>
+      <td><%= link_to "修正", [:edit, cost] %>
+      <%= link_to "消去", cost, method: :delete %></td>
     </tr>
   </tbody>
   <% end %>

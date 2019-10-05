@@ -1,5 +1,14 @@
+経費科目登録
+<%= form_for @subject do |s| %>
+  <%= s.label :name, "経費科目" %>
+  <%= s.text_field :name %>
+  <%= s.submit "登録" %>
+<% end %>
+
 経費科目一覧
 <% @subjects.each do |s|  %>
 <%= s.id %>
-<%= link_to s.name, s %>
+<%= s.name %>
+<%= link_to "修正", [:edit, s] %>
+<%= link_to "削除", s, method: :delete %>
 <% end %>
