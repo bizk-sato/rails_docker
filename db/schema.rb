@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_095425) do
+ActiveRecord::Schema.define(version: 2019_10_05_073444) do
 
   create_table "costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "price"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_095425) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password"
+    t.boolean "administrator"
   end
 
 end

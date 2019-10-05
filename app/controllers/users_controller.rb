@@ -48,7 +48,8 @@ class UsersController < ApplicationController
       :name,
       :age,
       :gender,
-      :password
+      :password,
+      :administrator
     )
   end
 end

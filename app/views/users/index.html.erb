@@ -2,11 +2,12 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">IDナンバー</th>
+                <th scope="col">ID</th>
                 <th scope="col">名前</th>
                 <th scope="col">年齢</th>
                 <th scope="col">性別</th>
                 <th scope="col">パスワード</th>
+                <th scope="col">管理者</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,11 @@
                     <td><%= user.age %></td>
                     <td><%= user.gender %></td>
                     <td><%= user.password %></td>
+                    <% if user.administrator %>
+                    <td><%= "管理者" %></td>
+                    <% else %>
+                    <td><%= "" %></td>
+                    <% end %>
                 </tr>
             <% end %>
         </tbody>

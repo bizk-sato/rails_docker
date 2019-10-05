@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :users # 7つのアクションを作成してくれる
+  root "users#index"
+  resources :users
   resources :costs
   resources :subjects
   resources :details
