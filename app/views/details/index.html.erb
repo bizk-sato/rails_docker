@@ -5,16 +5,14 @@
 <% end %>
 
 摘要一覧
-<% @details.each do |d| %>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm">
-      <%= d.id %>
-      <%= d.subject.name %>
-      <%= d.name %>
-      <%= link_to "修正", [:edit, d] %>
-      <%= link_to "削除", d, method: :delete %>
-    </div>
-  </div>
+<div class="row ml-3 mb-2">
+<% @details.each do |d| %>
+<div class="col-sm-4">
+  <%= d.subject.name %>
+  <%= d.name %>
+  <%= link_to "修正", [:edit, d] %>
+  <%= link_to "削除", d, method: :delete %>
 </div>
 <% end %>
+</div></div>

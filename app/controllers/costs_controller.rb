@@ -11,6 +11,7 @@ class CostsController < ApplicationController
 
   def create
     @cost = Cost.new(controller_params_costs)
+    @cost.user = @current_user
     if @cost.save
       redirect_to :costs
     else
@@ -43,6 +44,6 @@ private
 
 def controller_params_costs
   params.require(:cost).permit(
-    :day, :user_id, :subject_id, :detail_id, :price
+    :day, :subject_id, :detail_id, :price
   )
 end

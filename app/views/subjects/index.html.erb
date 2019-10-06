@@ -6,9 +6,13 @@
 <% end %>
 
 経費科目一覧
+<div class="container-fluid ml-5 mb-3">
+<div class="row">
 <% @subjects.each do |s|  %>
-<%= s.id %>
+<div class="col-2">
 <%= s.name %>
 <%= link_to "修正", [:edit, s] %>
 <%= link_to "削除", s, method: :delete %>
+</div>
 <% end %>
+</div></div>
