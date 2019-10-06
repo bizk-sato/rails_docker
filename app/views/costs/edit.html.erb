@@ -1,0 +1,11 @@
+<%= "精算者" %>
+<%= @current_user.name %>
+<%= form_for @cost do |f| %>
+   <form>
+   
+    <%= render "shared/cost_parts", f: f %>
+
+    <%= f.submit "内容変更", class: "btn btn-primary" %>
+   </form>
+<% end %>
+<%= render partial: "shared/error", locals: { object: @cost } %>

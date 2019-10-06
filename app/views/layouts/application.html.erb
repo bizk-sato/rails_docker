@@ -10,7 +10,55 @@
   </head>
 
   <body>
-    aaaa
+  <header>
+  <h1>社員管理用アプリ</h1>
+  <h2>機能一覧</h2>
+  <table class="container-fluid">
+  <tr class="row">
+  <th class="col-2">社員登録</th>
+  <td><%= link_to "社員一覧", :users %>
+  <% if @current_user&.administrator %>
+  <%= link_to "社員登録", :new_user %>
+  <% end %></td>
+  </tr>
+  <tr class="row">
+  <th class="col-2">経費精算関係</th>
+  <td><%= link_to "経費一覧", :costs %>
+  <% if @current_user %>
+  <%= link_to "経費計上", :new_cost %></td>
+  <% end %>
+  </tr>
+  <tr class="row">
+  <% if @current_user %>
+  <th class="col-2">経費科目関係</th>
+  <td><%= link_to "科目一覧", :subjects %></td>
+  <% end %>
+  </tr>
+  <tr class="row">
+  <% if @current_user %>
+  <th class="col-2">摘要関係</th>
+  <td><%= link_to "摘要一覧", :details %></td>
+  <% end %>
+  </tr>
+  </table>
+  <div>
+  ログインユーザー：
+  <% if @current_user %>
+  <%= @current_user.name %>
+  <%= link_to "ログアウト", :session, method: :delete %>
+  <% else %>
+  ログイン
+  <%= form_tag :session do %>
+    <div><label>ユーザー名：</label>
+    <input type="text" name="name"></div>
+    <div><label>パスワード：</label>
+    <input type="password" name="password"></div>
+    <div><input type="submit" value="ログイン"></div>
+  <% end %>
+  <% end %>
+  </div>
+  </header>
+  <main></main>
     <%= yield %>
   </body>
 </html>

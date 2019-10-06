@@ -1,0 +1,4 @@
+<%= d.label :subject_id, "経費科目" %>
+<%= d.collection_select :subject_id, Subject.all, :id, :name %>
+<%= d.label :name, "摘要" %>
+<%= d.text_field :name %>

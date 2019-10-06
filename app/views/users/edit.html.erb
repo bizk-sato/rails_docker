@@ -1,0 +1,10 @@
+個人データ編集
+<div class="container">
+  <%= form_for @user do |f| %>
+
+    <%= render "shared/user_parts", f: f %>
+
+    <%= f.submit "修正", class: "btn btn-success" %>
+  <% end %>
+</div>
+

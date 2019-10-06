@@ -1,0 +1,18 @@
+# target_version:
+#   rubocop v0.34.2
+
+# 自動生成されるものはチェック対象から除外する
+AllCops:
+  Exclude:
+    - "vendor/**/*" # rubocop config/default.yml
+    - "db/schema.rb"
+    - "config/*"
+    - "app/views/**/*"
+  DisplayCopNames: true
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+Documentation:
+  Enabled: false

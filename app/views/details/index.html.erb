@@ -1,0 +1,18 @@
+摘要登録
+<%= form_for @detail do |d| %>
+<%= render "shared/detail_parts", d: d %>
+<%= d.submit "登録" %>
+<% end %>
+
+摘要一覧
+<div class="container-fluid">
+<div class="row ml-3 mb-2">
+<% @details.each do |d| %>
+<div class="col-sm-4">
+  <%= d.subject.name %>
+  <%= d.name %>
+  <%= link_to "修正", [:edit, d] %>
+  <%= link_to "削除", d, method: :delete %>
+</div>
+<% end %>
+</div></div>
